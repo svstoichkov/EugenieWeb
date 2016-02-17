@@ -1,14 +1,12 @@
 ﻿namespace EugenieWeb.Web
 {
-    using System.Data.Entity;
     using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
 
-    using Data;
-    using Data.Migrations;
+    using Eugenie.Server.Api;
 
     using Infrastructure.Mapping;
 
@@ -21,7 +19,7 @@
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<EugenieWebDbContext, Configuration>());
+            DatabaseConfig.Initialize();
             AutofacConfig.RegisterAutofac();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
