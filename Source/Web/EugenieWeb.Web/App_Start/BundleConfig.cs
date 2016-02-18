@@ -26,7 +26,7 @@
 
         private static void RegisterStyles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.css", "~/Content/site.css", "~/Content/pages-icons.css", "~/Content/pages.css", "~/Content/pace-theme-flash.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.min.css", "~/Content/site.css", "~/Content/pages-icons.css", "~/Content/pages.css", "~/Content/pace-theme-flash.css"));
             bundles.Add(new StyleBundle("~/Content/Landing/css").Include("~/Content/Landing/material-design-iconic-font.min.css", "~/Content/Landing/bootstrap.css", "~/Content/Landing/main.css"));
         }
     }
