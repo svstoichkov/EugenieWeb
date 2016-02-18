@@ -227,6 +227,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Stores\AddStoreViewModel.cs" />
     <Compile Include="ViewModels\Stores\StoreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -311,7 +312,8 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\_Layout.cshtml" />
-    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Stores\ListStores.cshtml" />
+    <Content Include="Views\Stores\AddStore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

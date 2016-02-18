@@ -1,0 +1,43 @@
+﻿@model IList<EugenieWeb.Web.ViewModels.Stores.StoreViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Магазини";
+}
+
+<div class="panel-body">
+    <div class="table-responsive">
+        <div id="basicTable_wrapper" class="dataTables_wrapper form-inline no-footer">
+            <table class="table table-hover dataTable no-footer" id="basicTable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th>Име</th>
+                        <th>Акаунт</th>
+                        <th>Адрес</th>
+                        <th>Изтрий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var store in Model)
+                    {
+                        <tr role="row">
+                            <td class="v-align-middle sorting_1">
+                                <p>@store.Name</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p>@store.Username</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p>@store.Url</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <button class="btn btn-danger btn-cons">Изтрий</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

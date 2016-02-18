@@ -23,11 +23,39 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult ListStores()
         {
             var userId = this.User.Identity.GetUserId();
             var stores = this.stores.All().Where(x => x.UserId == userId).To<StoreViewModel>().ToList();
             return View(stores);
+        }
+
+        [HttpGet]
+        public ActionResult AddStore()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddStore(AddStoreViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            var userId = this.User.Identity.GetUserId();
+            var store = new Store();
+            store.UserId = userId;
+            store.Name = model.Name;
+            store.Username = model.Username;
+            store.Password = model.Password;
+            store.Url = model.Url;
+            this.stores.Add(store);
+            this.stores.SaveChanges();
+
+            return this.View();
         }
     }
 }
