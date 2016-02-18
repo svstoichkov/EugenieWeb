@@ -10,7 +10,7 @@
         [Required]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "The field is required")]
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
