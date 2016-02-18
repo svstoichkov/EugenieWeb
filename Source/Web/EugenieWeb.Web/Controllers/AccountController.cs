@@ -86,7 +86,7 @@
                 this.SignInManager.PasswordSignInAsync(
                     model.Email,
                     model.Password,
-                    model.RememberMe,
+                    true,
                     shouldLockout: false);
             switch (result)
             {
@@ -97,10 +97,10 @@
                 case SignInStatus.RequiresVerification:
                     return this.RedirectToAction(
                         "SendCode",
-                        new { ReturnUrl = returnUrl, model.RememberMe });
+                        new { ReturnUrl = returnUrl, RememberMe = true });
                 case SignInStatus.Failure:
                 default:
-                    this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    this.ModelState.AddModelError(string.Empty, "Грешно име или парола");
                     return this.View(model);
             }
         }

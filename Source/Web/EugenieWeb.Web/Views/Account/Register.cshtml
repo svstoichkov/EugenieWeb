@@ -3,7 +3,7 @@
     Layout = "~/Views/Account/_Layout.cshtml";
     ViewBag.Title = "Регистрация";
 }
-<h2>@ViewBag.Title</h2>
+<h1>@ViewBag.Title</h1>
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "p-t-15", role = "form" }))
 {
     @Html.AntiForgeryToken()
