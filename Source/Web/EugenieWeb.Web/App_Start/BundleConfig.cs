@@ -20,13 +20,13 @@
             bundles.Add(new ScriptBundle("~/bundles/landing/main").Include("~/Scripts/Landing/main.js"));
             bundles.Add(new ScriptBundle("~/bundles/landing/modernizr").Include("~/Scripts/Landing/modernizr.custom.js"));
             bundles.Add(new ScriptBundle("~/bundles/landing/vendor").Include("~/Scripts/Landing/vendor.js"));
-
-            // bundles.Add(new ScriptBundle("~/bundles/pages").Include("~/Scripts/pages.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/pace").Include("~/Scripts/pace.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/pages").Include("~/Scripts/pages.min.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.css", "~/Content/site.css", "~/Content/pages-icons.css", "~/Content/pages.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.css", "~/Content/site.css", "~/Content/pages-icons.css", "~/Content/pages.css", "~/Content/pace-theme-flash.css"));
             bundles.Add(new StyleBundle("~/Content/Landing/css").Include("~/Content/Landing/material-design-iconic-font.min.css", "~/Content/Landing/bootstrap.css", "~/Content/Landing/main.css"));
         }
     }

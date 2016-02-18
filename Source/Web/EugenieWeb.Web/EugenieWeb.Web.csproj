@@ -238,6 +238,8 @@
     <Content Include="Content\Landing\Images\photo-1423753623104.jpg" />
     <Content Include="Content\Landing\main.css" />
     <Content Include="Content\Landing\material-design-iconic-font.min.css" />
+    <Content Include="Content\Login\Images\new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" />
+    <Content Include="Content\pace-theme-flash.css" />
     <Content Include="Content\pages-icons.css" />
     <Content Include="Content\pages.css" />
     <Content Include="favicon.ico" />
@@ -278,6 +280,7 @@
     <Content Include="Scripts\Landing\main.js" />
     <Content Include="Scripts\Landing\modernizr.custom.js" />
     <Content Include="Scripts\Landing\vendor.js" />
+    <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\pages.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -298,7 +301,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoginOld.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -313,6 +316,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

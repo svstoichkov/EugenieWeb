@@ -8,4 +8,5 @@
 /// <reference path="landing/main.js" />
 /// <reference path="landing/modernizr.custom.js" />
 /// <reference path="landing/vendor.js" />
+/// <reference path="pace.min.js" />
 /// <reference path="pages.min.js" />
