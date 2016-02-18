@@ -1,74 +1,37 @@
-﻿@{
-    Layout = null;
+﻿@model EugenieWeb.Web.ViewModels.Account.LoginViewModel
+@{
+    Layout = "~/Views/Account/_Layout.cshtml";
+    ViewBag.Title = "Вход";
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta charset="utf-8" />
-    <title>Pages - Admin Dashboard UI Kit - Lock Screen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
-    @Styles.Render("~/Content/css")
-</head>
-<body class="fixed-header ">
-    <div class="login-wrapper ">
-        <div class="bg-pic">
-            <img src="../../Content/Login/Images/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" alt="" class="lazy">
+<h1>@ViewBag.Title</h1>
+@using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "p-t-15", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "error" })
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group-default">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+            </div>
         </div>
-
-
-        <div class="login-container bg-white">
-            <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-                <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
-                <p class="p-t-35">Sign into your pages account</p>
-
-                <form id="form-login" class="p-t-15" role="form" action="index.html">
-
-                    <div class="form-group form-group-default">
-                        <label>Login</label>
-                        <div class="controls">
-                            <input type="text" name="username" placeholder="User Name" class="form-control" required>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group form-group-default">
-                        <label>Password</label>
-                        <div class="controls">
-                            <input type="password" class="form-control" name="password" placeholder="Credentials" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 no-padding">
-                            <div class="checkbox ">
-                                <input type="checkbox" value="1" id="checkbox1">
-                                <label for="checkbox1">Keep Me Signed in</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <a href="#" class="text-info small">Help? Contact Support</a>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary btn-cons m-t-10" type="submit">Sign in</button>
-                </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group-default">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
             </div>
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/pace")
-        @Scripts.Render("~/bundles/landing/modernizr")
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/pages")
+    <div class="row">
+        <div class="col-md-6 pull-right text-right">
+            @Html.ActionLink("Регистрация", "Register", "Account", routeValues: new { area = string.Empty }, htmlAttributes: new { @class = "text-info small", id = "registerLink" })
+        </div>
+    </div>
 
-    <script>
-    $(function() {
-        $('#form-login').validate();
-    })
-    </script>
-</body>
-</html>
+    <input class="btn btn-primary btn-cons m-t-10" type="submit" value="Влез"/>
+}

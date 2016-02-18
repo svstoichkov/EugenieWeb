@@ -4,12 +4,20 @@
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "The field is required")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The field is required")]
+        [Display(Name = "First name")]
+        public string FirstNname { get; set; }
+
+        [Required(ErrorMessage = "The field is required")]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "The field is required")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

@@ -4,12 +4,12 @@
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "The field is required")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The field is required")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
