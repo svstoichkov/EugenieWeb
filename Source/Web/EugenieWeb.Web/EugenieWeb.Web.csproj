@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -232,6 +233,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\logo_white.png" />
+    <Content Include="Content\Landing\bootstrap.css" />
+    <Content Include="Content\Landing\Images\2.jpg" />
+    <Content Include="Content\Landing\Images\photo-1423753623104.jpg" />
+    <Content Include="Content\Landing\main.css" />
+    <Content Include="Content\Landing\material-design-iconic-font.min.css" />
+    <Content Include="Content\pages-icons.css" />
     <Content Include="Content\pages.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -249,6 +256,16 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Management\Views\web.config" />
+    <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
+    <None Include="fonts\pages-icon\Pages-icon.eot" />
+    <Content Include="fonts\pages-icon\Pages-icon.svg" />
+    <None Include="fonts\pages-icon\Pages-icon.ttf" />
+    <None Include="fonts\pages-icon\Pages-icon.woff" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -257,6 +274,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Landing\loader.js" />
+    <Content Include="Scripts\Landing\main.js" />
+    <Content Include="Scripts\Landing\modernizr.custom.js" />
+    <Content Include="Scripts\Landing\vendor.js" />
     <Content Include="Scripts\pages.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -297,6 +318,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Management\Controllers\" />
+    <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
