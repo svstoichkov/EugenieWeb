@@ -48,7 +48,7 @@
         private static void RegisterServices(ContainerBuilder builder)
         {
             builder.Register(x => new EugenieWebDbContext())
-                .As<DbContext>()
+                .As<IEugenieWebDbContext>()
                 .InstancePerRequest();
             builder.Register(x => new HttpCacheService())
                 .As<ICacheService>()
