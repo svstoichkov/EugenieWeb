@@ -196,11 +196,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
-    <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\StoresController.cs" />
+    <Compile Include="Areas\Management\Controllers\ReportsController.cs" />
+    <Compile Include="Areas\Management\Controllers\StoresController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -227,8 +226,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="ViewModels\Stores\AddStoreViewModel.cs" />
-    <Compile Include="ViewModels\Stores\StoreViewModel.cs" />
+    <Compile Include="Areas\Management\ViewModels\Stores\AddStoreViewModel.cs" />
+    <Compile Include="Areas\Management\ViewModels\Stores\StoreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -259,11 +258,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Administration\Views\web.config" />
-    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Management\Views\web.config" />
     <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -296,7 +292,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
@@ -312,17 +308,13 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\_Layout.cshtml" />
-    <Content Include="Views\Stores\ListStores.cshtml" />
-    <Content Include="Views\Stores\AddStore.cshtml" />
+    <Content Include="Areas\Management\Views\Stores\ListStores.cshtml" />
+    <Content Include="Areas\Management\Views\Stores\AddStore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Management\Controllers\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

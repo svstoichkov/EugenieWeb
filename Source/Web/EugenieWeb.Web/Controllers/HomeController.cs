@@ -4,11 +4,6 @@
 
     public class HomeController : BaseController
     {
-
-        public HomeController()
-        {
-        }
-
         public ActionResult Index()
         {
             return this.View();

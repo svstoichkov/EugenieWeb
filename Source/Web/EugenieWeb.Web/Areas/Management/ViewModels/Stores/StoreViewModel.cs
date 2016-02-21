@@ -1,4 +1,4 @@
-﻿namespace EugenieWeb.Web.ViewModels.Stores
+﻿namespace EugenieWeb.Web.Areas.Management.ViewModels.Stores
 {
     using System.ComponentModel.DataAnnotations;
 

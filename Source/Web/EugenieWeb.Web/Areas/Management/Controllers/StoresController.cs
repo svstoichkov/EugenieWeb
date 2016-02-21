@@ -1,4 +1,4 @@
-﻿namespace EugenieWeb.Web.Controllers
+﻿namespace EugenieWeb.Web.Areas.Management.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
@@ -13,7 +13,10 @@
 
     using ViewModels.Stores;
 
-    public class StoresController : Controller
+    using Web.Controllers;
+
+    [Authorize]
+    public class StoresController : BaseController
     {
         private readonly IRepository<Store> stores;
 
@@ -27,7 +30,7 @@
         {
             var userId = this.User.Identity.GetUserId();
             var stores = this.stores.All().Where(x => x.UserId == userId).To<StoreViewModel>().ToList();
-            return View(stores);
+            return this.View(stores);
         }
 
         [HttpGet]
