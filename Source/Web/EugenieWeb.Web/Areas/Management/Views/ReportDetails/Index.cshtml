@@ -1,0 +1,63 @@
+﻿@model EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.ReportDetailsResponse
+@{
+    ViewBag.Title = "Детайли за отчет " + Model.Date.ToShortDateString();
+}
+
+<div class="panel">
+    <ul class="nav nav-tabs nav-tabs-simple hidden-xs" role="tablist" data-init-reponsive-tabs="collapse">
+        <li class="active">
+            <a href="#sells" data-toggle="tab"  role="tab" class="js-tabcollapse-panel-heading">Продажби</a>
+        </li>
+        <li class="">
+            <a href="#waste" data-toggle="tab"  role="tab" aclass="js-tabcollapse-panel-heading">Брак</a>
+        </li>
+        <li class="">
+            <a href="#shipments" data-toggle="tab" role="tab" class="js-tabcollapse-panel-heading">Доставки</a>
+        </li>
+    </ul>
+    <div class="tab-content hidden-xs">
+        <div class="tab-pane active" id="sells">
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.Partial("DealsPresenterPartial", Model.Sells)
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="waste">
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.Partial("DealsPresenterPartial", Model.Waste)
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="shipments">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <div id="condensedTable_wrapper" class="dataTables_wrapper form-inline no-footer">
+                            <table class="table table-hover table-condensed dataTable no-footer" id="condensedTable" role="grid">
+                                <thead>
+                                <tr role="row">
+                                    <th style="width: 30%" class="sorting_asc" tabindex="0" rowspan="1" colspan="1">Име</th>
+                                    <th style="width: 91px;" class="sorting" tabindex="0" rowspan="1" colspan="1">Цена</th>
+                                    <th style="width: 134px;" class="sorting" tabindex="0" rowspan="1" colspan="1">Количество</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var shipment in Model.Shipments)
+                                {
+                                    <tr role="row">
+                                        <td class="v-align-middle semi-bold">@shipment.Name</td>
+                                        <td class="v-align-middle">@shipment.SellingPrice</td>
+                                        <td class="v-align-middle semi-bold">@shipment.Quantity</td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model ICollection<EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.Report>
+@{
+    ViewBag.Title = "Отчети";
+}
+
+<div class="panel-body">
+    <div class="table-responsive">
+        <div id="basicTable_wrapper" class="dataTables_wrapper form-inline no-footer">
+            <table class="table table-hover dataTable no-footer" id="basicTable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th>Дата</th>
+                        <th>Стокооборот</th>
+                        <th>Оборот</th>
+                        <th>Брак</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var report in Model)
+                    {
+                        <tr role="row">
+                            <td class="v-align-middle">
+                                <a href="/management/reportdetails/index/@report.Date.Year-@report.Date.Month-@report.Date.Day">@report.Date.ToShortDateString()</a>
+                            </td>
+                            <td class="v-align-middle">
+                                <p>@report.StockPrice</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p>@report.Earning</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p>@report.Waste</p>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

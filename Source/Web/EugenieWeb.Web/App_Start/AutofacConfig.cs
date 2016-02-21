@@ -1,8 +1,9 @@
 ﻿namespace EugenieWeb.Web
 {
-    using System.Data.Entity;
     using System.Reflection;
     using System.Web.Mvc;
+
+    using Areas.Management.Helpers;
 
     using Autofac;
     using Autofac.Integration.Mvc;
@@ -13,6 +14,7 @@
 
     using Eugenie.Data;
 
+    using Services.Data;
     using Services.Web;
 
     public static class AutofacConfig
@@ -47,25 +49,15 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            builder.Register(x => new EugenieWebDbContext())
-                .As<IEugenieWebDbContext>()
-                .InstancePerRequest();
-            builder.Register(x => new HttpCacheService())
-                .As<ICacheService>()
-                .InstancePerRequest();
-            builder.Register(x => new IdentifierProvider())
-                .As<IIdentifierProvider>()
-                .InstancePerRequest();
+            builder.Register(x => new EugenieWebDbContext()).As<IEugenieWebDbContext>().InstancePerRequest();
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerRequest();
+            builder.Register(x => new HttpCacheService()).As<ICacheService>().InstancePerRequest();
+            builder.Register(x => new WebApiClient()).As<IWebApiClient>().InstancePerRequest();
 
-            //var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
-            //builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            var servicesAssembly = Assembly.GetAssembly(typeof(IStoresService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
-            builder.RegisterGeneric(typeof(Repository<>))
-                .As(typeof(IRepository<>))
-                .InstancePerRequest();
-
-            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-                .AssignableTo<BaseController>().PropertiesAutowired();
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).AssignableTo<BaseController>().PropertiesAutowired();
         }
     }
 }

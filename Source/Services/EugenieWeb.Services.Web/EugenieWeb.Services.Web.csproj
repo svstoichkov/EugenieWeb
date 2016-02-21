@@ -45,8 +45,6 @@
   <ItemGroup>
     <Compile Include="HttpCacheService.cs" />
     <Compile Include="ICacheService.cs" />
-    <Compile Include="IdentifierProvider.cs" />
-    <Compile Include="IIdentifierProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -42,12 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IStoresService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoresService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\EugenieWeb.Data.Models\EugenieWeb.Data.Models.csproj">
       <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
       <Name>EugenieWeb.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\EugenieWeb.Data\EugenieWeb.Data.csproj">
+      <Project>{7c950cdc-9587-4b65-a204-988efed17948}</Project>
+      <Name>EugenieWeb.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\EugenieWeb.Services.Web\EugenieWeb.Services.Web.csproj">
       <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>

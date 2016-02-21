@@ -15,6 +15,7 @@
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-{version}.js"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery-scrollbar").Include("~/Scripts/jquery.scrollbar.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
             bundles.Add(new ScriptBundle("~/bundles/landing/loader").Include("~/Scripts/Landing/loader.js"));
             bundles.Add(new ScriptBundle("~/bundles/landing/main").Include("~/Scripts/Landing/main.js"));

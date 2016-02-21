@@ -1,5 +1,6 @@
 ﻿namespace EugenieWeb.Web.Areas.Management.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -10,19 +11,18 @@
     using Services.Data;
 
     [Authorize]
-    public class ReportsController : BaseManagementController
+    public class ReportDetailsController : BaseManagementController
     {
         private readonly IStoresService storesService;
         private readonly IWebApiClient apiClient;
 
-        public ReportsController(IStoresService storesService, IWebApiClient apiClient)
+        public ReportDetailsController(IStoresService storesService, IWebApiClient apiClient)
         {
             this.storesService = storesService;
             this.apiClient = apiClient;
         }
 
-        [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(DateTime id)
         {
             var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
             if (!stores.Any())
@@ -33,8 +33,8 @@
             var client = this.GetClient(stores.First());
             if (client != null)
             {
-                var reports = this.apiClient.GetReports(client);
-                return this.View(reports);
+                var reportDetails = this.apiClient.GetReportDetails(client, id);
+                return this.View(reportDetails);
             }
 
             return this.View();
