@@ -1,10 +1,8 @@
 ﻿namespace EugenieWeb.Web.Areas.Management.Controllers
 {
-    using System.Data.Entity;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-
-    using Data;
 
     using Helpers;
     using Helpers.WebApiModels;
@@ -16,6 +14,7 @@
 
     using Services.Data;
 
+    [Authorize]
     public class ProductsController : BaseManagementController
     {
         private readonly IStoresService storesService;
@@ -29,11 +28,6 @@
 
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult Products_Read([DataSourceRequest]DataSourceRequest request)
-        {
             var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
             if (!stores.Any())
             {
@@ -43,57 +37,58 @@
             var client = this.GetClient(stores.First());
             if (client != null)
             {
-                var result = this.apiClient.GetProducts(client).AsQueryable().ToDataSourceResult(request, product => new {
-                    Id = product.Id,
-                    Name = product.Name,
-                    BuyingPrice = product.BuyingPrice,
-                    SellingPrice = product.SellingPrice,
-                    Measure = product.Measure,
-                    Quantity = product.Quantity
-                });
-                return Json(result);
+                var products = this.apiClient.GetProducts(client);
+                this.Session["products"] = products;
             }
-            else
+
+            return View();
+        }
+
+        public ActionResult Products_Read([DataSourceRequest]DataSourceRequest request)
+        {
+            var result = ((List<Product>)this.Session["products"]).ToDataSourceResult(request, product => new
             {
-                return this.RedirectToAction("AddStore", "Stores");
-            }
+                Id = product.Id,
+                Name = product.Name,
+                BuyingPrice = product.BuyingPrice,
+                SellingPrice = product.SellingPrice,
+                Measure = product.Measure,
+                Quantity = product.Quantity
+            });
+
+            return this.Json(result);
 
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Products_Create([DataSourceRequest]DataSourceRequest request, Product product)
         {
-            var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
-            if (!stores.Any())
+            if (this.ModelState.IsValid)
             {
-                return this.RedirectToAction("AddStore", "Stores");
+                var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
+
+                var client = this.GetClient(stores.First());
+                if (client != null)
+                {
+                    var model = new AddProductModel
+                    {
+                        Name = product.Name,
+                        BuyingPrice = product.BuyingPrice,
+                        SellingPrice = product.SellingPrice,
+                        Measure = product.Measure,
+                        QuantityToAdd = product.Quantity
+                    };
+                    this.apiClient.AddOrUpdate(client, model);
+                }
             }
 
-            var client = this.GetClient(stores.First());
-            if (client != null)
-            {
-                var model = new AddProductModel
-                            {
-                                Name = product.Name,
-                                BuyingPrice = product.BuyingPrice,
-                                SellingPrice = product.SellingPrice,
-                                Measure = product.Measure,
-                                QuantityToAdd = product.Quantity
-                            };
-                this.apiClient.AddOrUpdate(client, model);
-            }
-
-            return Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
+            return this.Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Products_Update([DataSourceRequest]DataSourceRequest request, Product product)
         {
             var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
-            if (!stores.Any())
-            {
-                return this.RedirectToAction("AddStore", "Stores");
-            }
 
             var client = this.GetClient(stores.First());
             if (client != null)
@@ -117,10 +112,6 @@
         public ActionResult Products_Destroy([DataSourceRequest]DataSourceRequest request, Product product)
         {
             var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
-            if (!stores.Any())
-            {
-                return this.RedirectToAction("AddStore", "Stores");
-            }
 
             var client = this.GetClient(stores.First());
             if (client != null)
@@ -128,7 +119,7 @@
                 this.apiClient.DeleteProduct(client, product.Name);
             }
 
-            return Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
+            return this.Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
         }
     }
 }

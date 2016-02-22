@@ -18,20 +18,7 @@
                 <tbody>
                     @foreach (var store in Model)
                     {
-                        <tr role="row">
-                            <td class="v-align-middle sorting_1">
-                                <p>@store.Name</p>
-                            </td>
-                            <td class="v-align-middle">
-                                <p>@store.Username</p>
-                            </td>
-                            <td class="v-align-middle">
-                                <p>@store.Url</p>
-                            </td>
-                            <td class="v-align-middle">
-                                <button class="btn btn-danger btn-cons">Изтрий</button>
-                            </td>
-                        </tr>
+                        @Html.DisplayFor(m => store);
                     }
                 </tbody>
             </table>

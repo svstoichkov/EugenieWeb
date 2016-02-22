@@ -18,20 +18,7 @@
                 <tbody>
                     @foreach (var report in Model)
                     {
-                        <tr role="row">
-                            <td class="v-align-middle">
-                                <a href="/management/reportdetails/index/@report.Date.Year-@report.Date.Month-@report.Date.Day">@report.Date.ToShortDateString()</a>
-                            </td>
-                            <td class="v-align-middle">
-                                <p>@report.StockPrice</p>
-                            </td>
-                            <td class="v-align-middle">
-                                <p>@report.Earning</p>
-                            </td>
-                            <td class="v-align-middle">
-                                <p>@report.Waste</p>
-                            </td>
-                        </tr>
+                        @Html.DisplayFor(m => report)
                     }
                 </tbody>
             </table>

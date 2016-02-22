@@ -46,11 +46,7 @@
                                 <tbody>
                                 @foreach (var shipment in Model.Shipments)
                                 {
-                                    <tr role="row">
-                                        <td class="v-align-middle semi-bold">@shipment.Name</td>
-                                        <td class="v-align-middle">@shipment.SellingPrice</td>
-                                        <td class="v-align-middle semi-bold">@shipment.Quantity</td>
-                                    </tr>
+                                    @Html.DisplayFor(m => shipment)
                                 }
                                 </tbody>
                             </table>

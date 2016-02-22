@@ -1,5 +1,7 @@
 ﻿namespace EugenieWeb.Web.Areas.Management.Helpers.WebApiModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Product
     {
         public Product()
@@ -9,6 +11,9 @@
 
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(64)]
+        [MinLength(3)]
         public string Name { get; set; }
 
         public decimal BuyingPrice { get; set; }

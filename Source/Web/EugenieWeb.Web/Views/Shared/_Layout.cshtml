@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using EugenieWeb.Common
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,30 +16,21 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu-items">
-                <li>
-                    <a href="/management/products" class="detailed">
-                        <span class="title">Продукти</span>
-                    </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
-                </li>
-                <li>
-                    <a href="/management/reports" class="detailed">
-                        <span class="title">Отчети</span>
-                    </a>
-                    <span class="icon-thumbnail">W</span>
-                </li>
-                <li>
-                    <a href="/management/stores/liststores" class="detailed">
-                        <span class="title">Магазини</span>
-                    </a>
-                    <span class="icon-thumbnail">W</span>
-                </li>
-                <li>
-                    <a href="/management/stores/addstore" class="detailed">
-                        <span class="title">Добави магазин</span>
-                    </a>
-                    <span class="icon-thumbnail">W</span>
-                </li>
+                @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                {
+                    if ((string) HttpContext.Current.Request.RequestContext.RouteData.DataTokens["area"] == "Administration")
+                    {
+                        @Html.Partial("/Areas/Administration/Views/Shared/SidebarMenuPartial.cshtml")
+                    }
+                    else
+                    {
+                        @Html.Partial("/Areas/Management/Views/Shared/SidebarMenuPartial.cshtml")
+                    }
+                }
+                else
+                {
+                    @Html.Partial("/Areas/Management/Views/Shared/SidebarMenuPartial.cshtml")
+                }
             </ul>
             <div class="clearfix"></div>
         </div>

@@ -1,4 +1,4 @@
-﻿namespace Eugenie.Data
+﻿namespace EugenieWeb.Data
 {
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -16,5 +16,9 @@
         int SaveChanges();
 
         IDbSet<Store> Stores { get; set; }
+
+        IDbSet<Backup> Backups { get; set; }
+
+        IDbSet<Download> Downloads { get; set; }
     }
 }

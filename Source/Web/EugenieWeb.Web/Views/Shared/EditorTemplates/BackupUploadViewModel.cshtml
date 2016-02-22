@@ -1,0 +1,8 @@
+﻿@model EugenieWeb.Web.Areas.Management.ViewModels.Backups.BackupUploadViewModel
+
+@Html.DropDownListFor(m => m.SelectedStoreId, new SelectList(Model.Stores.Select(x => new
+{
+    x.Id,
+    x.Name
+}), "id", "name", Model.SelectedStoreId))
+<input type="file" name="file" />
