@@ -1,0 +1,46 @@
+﻿@using Kendo.Mvc.UI
+
+@(Html.Kendo().Grid<EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.Product>()
+      .Name("grid")
+      .HtmlAttributes(new { style = "height:700px", id = "gridWorkflows" })
+      .Columns(columns =>
+               {
+                   columns.Bound(c => c.Name);
+                   columns.Bound(c => c.BuyingPrice);
+                   columns.Bound(c => c.SellingPrice);
+                   columns.Bound(c => c.Measure);
+                   columns.Bound(c => c.Quantity);
+                   columns.Command(command =>
+                                   {
+                                       command.Edit();
+                                       command.Destroy();
+                                   }).Width(180);
+               })
+      .ToolBar(toolbar =>
+               {
+                   toolbar.Create();
+               })
+
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable =>
+                {
+                    sortable.SortMode(GridSortMode.SingleColumn);
+                })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Model(model => model.Id(p => p.Id))
+                                    .Read(read => read.Action("Products_Read", "Products"))
+                                    .Create(create => create.Action("Products_Create", "Products"))
+                                    .Update(update => update.Action("Products_Update", "Products"))
+                                    .Destroy(destroy => destroy.Action("Products_Destroy", "Products"))
+      )
+)
+
+@section kendoui{
+    @Styles.Render("~/Content/KendoUI/css")
+    @Scripts.Render("~/bundles/kendo")
+}
+
