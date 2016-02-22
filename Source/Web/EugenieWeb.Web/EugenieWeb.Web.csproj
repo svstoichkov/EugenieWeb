@@ -202,6 +202,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\StoresController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Management\Controllers\BackupsController.cs" />
     <Compile Include="Areas\Management\Controllers\BaseManagementController.cs" />
     <Compile Include="Areas\Management\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Management\Controllers\ReportDetailsController.cs" />
@@ -223,6 +224,8 @@
     <Compile Include="Areas\Management\Helpers\WebApiModels\Shipment.cs" />
     <Compile Include="Areas\Management\Helpers\WebApiModels\UserInfoResponse.cs" />
     <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Management\ViewModels\Backups\BackupUploadViewModel.cs" />
+    <Compile Include="Areas\Management\ViewModels\Backups\BackupViewModel.cs" />
     <Compile Include="Areas\Management\ViewModels\Reports\ReportViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Management\Controllers\ReportsController.cs" />
@@ -301,6 +304,8 @@
     <Content Include="Areas\Management\Views\Shared\SidebarMenuPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\SidebarMenuPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Stores\Index.cshtml" />
+    <Content Include="Areas\Management\Views\Backups\Index.cshtml" />
+    <Content Include="Areas\Management\Views\Backups\Upload.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -359,7 +364,7 @@
     <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Backups\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />

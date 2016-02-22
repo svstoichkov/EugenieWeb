@@ -2,11 +2,11 @@
 {
     using System.Data.Entity;
 
+    using Eugenie.Data;
+
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using Eugenie.Data;
-    
-    using EugenieWeb.Data.Models;
+    using Models;
 
     public class EugenieWebDbContext : IdentityDbContext<User>, IEugenieWebDbContext
     {
@@ -21,5 +21,7 @@
         }
 
         public IDbSet<Store> Stores { get; set; }
+
+        public IDbSet<Backup> Backups { get; set; }
     }
 }

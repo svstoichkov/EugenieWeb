@@ -53,8 +53,7 @@
                 BuyingPrice = product.BuyingPrice,
                 SellingPrice = product.SellingPrice,
                 Measure = product.Measure,
-                Quantity = product.Quantity,
-                OldName = product.Name
+                Quantity = product.Quantity
             });
 
             return this.Json(result);
