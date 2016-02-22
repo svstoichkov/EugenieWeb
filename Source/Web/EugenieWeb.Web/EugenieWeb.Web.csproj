@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\DownloadsController.cs" />
     <Compile Include="Areas\Administration\Controllers\StoresController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Management\Controllers\BackupsController.cs" />
@@ -231,6 +232,8 @@
     <Compile Include="Areas\Management\Controllers\ReportsController.cs" />
     <Compile Include="Areas\Management\Controllers\StoresController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DownloadsController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -306,6 +309,7 @@
     <Content Include="Areas\Administration\Views\Stores\Index.cshtml" />
     <Content Include="Areas\Management\Views\Backups\Index.cshtml" />
     <Content Include="Areas\Management\Views\Backups\Upload.cshtml" />
+    <Content Include="Areas\Administration\Views\Downloads\Index.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -340,7 +344,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
@@ -362,13 +365,22 @@
     <Content Include="Views\Shared\EditorTemplates\AddStoreViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Store.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\BackupUploadViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\StoreViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Deal.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BackupViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Display.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Report.cshtml" />
+    <Content Include="Views\Errors\500.cshtml" />
+    <Content Include="Views\Errors\404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />
+    <Folder Include="App_Data\Installs\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
-    <Folder Include="Views\Grid\" />
+    <Folder Include="Views\Downloads\" />
     <Folder Include="Views\Products\" />
     <Folder Include="Views\Stores\" />
     <Folder Include="Views\Users\" />

@@ -11,11 +11,8 @@
             </thead>
             <tbody>
                 @foreach (var deal in Model)
-            {
-                    <tr role="row">
-                        <td class="v-align-middle semi-bold">@deal.Date</td>
-                        <td class="v-align-middle">@deal.Total</td>
-                </tr>
+                {
+                    @Html.DisplayFor(m => deal)
                 }
             </tbody>
         </table>

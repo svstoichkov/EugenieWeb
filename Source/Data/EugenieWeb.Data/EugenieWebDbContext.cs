@@ -23,5 +23,7 @@
         public IDbSet<Store> Stores { get; set; }
 
         public IDbSet<Backup> Backups { get; set; }
+
+        public IDbSet<Download> Downloads { get; set; }
     }
 }

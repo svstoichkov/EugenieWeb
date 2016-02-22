@@ -1,6 +1,5 @@
 ﻿namespace EugenieWeb.Web.Areas.Management.Controllers
 {
-    using System;
     using System.IO;
     using System.Linq;
     using System.Web;
@@ -54,6 +53,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Upload(HttpPostedFileBase file, int selectedStoreId)
         {
             var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());

@@ -3,6 +3,8 @@
     using System.Data.Entity;
     using System.Linq;
 
+    using EugenieWeb.Data;
+
     public class Repository<T> : IRepository<T> where T : class
     {
         public Repository(IEugenieWebDbContext context)
