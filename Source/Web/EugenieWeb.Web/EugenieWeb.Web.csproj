@@ -82,6 +82,9 @@
       <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\Libraries\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -197,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Management\Controllers\BaseManagementController.cs" />
+    <Compile Include="Areas\Management\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Management\Controllers\ReportDetailsController.cs" />
     <Compile Include="Areas\Management\Helpers\IWebApiClient.cs" />
     <Compile Include="Areas\Management\Helpers\ServerTester.cs" />
@@ -255,6 +259,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\logo_white.png" />
+    <Content Include="Content\jquery.scrollbar.css" />
+    <Content Include="Content\KendoUI\kendo.common-material.min.css" />
+    <Content Include="Content\KendoUI\kendo.default.min.css" />
+    <Content Include="Content\KendoUI\kendo.material.min.css" />
     <Content Include="Content\Landing\bootstrap.css" />
     <Content Include="Content\Landing\Images\2.jpg" />
     <Content Include="Content\Landing\Images\photo-1423753623104.jpg" />
@@ -283,6 +291,7 @@
     <Content Include="Areas\Management\Views\Reports\Index.cshtml" />
     <Content Include="Areas\Management\Views\ReportDetails\Index.cshtml" />
     <Content Include="Areas\Management\Views\Shared\DealsPresenterPartial.cshtml" />
+    <Content Include="Areas\Management\Views\Products\Index.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -299,6 +308,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.all.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
     <Content Include="Scripts\Landing\loader.js" />
     <Content Include="Scripts\Landing\main.js" />
     <Content Include="Scripts\Landing\modernizr.custom.js" />
@@ -339,6 +350,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
+    <Folder Include="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
