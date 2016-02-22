@@ -1,0 +1,13 @@
+﻿@model EugenieWeb.Web.Areas.Management.ViewModels.Backups.BackupViewModel
+    
+<tr role="row">
+    <td class="v-align-middle">
+        <p>@Model.CreatedOn</p>
+    </td>
+    <td class="v-align-middle">
+        <a class="btn btn-danger btn-cons"
+           href="/management/backups/download/@Model.Id">
+            Изтегли
+        </a>
+    </td>
+</tr>

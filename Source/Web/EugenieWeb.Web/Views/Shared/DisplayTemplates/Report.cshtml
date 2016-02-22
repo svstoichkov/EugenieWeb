@@ -1,0 +1,16 @@
+﻿@model EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.Report
+
+<tr role="row">
+    <td class="v-align-middle">
+        <a href="/management/reportdetails/index/@Model.Date.Year-@Model.Date.Month-@Model.Date.Day">@Model.Date.ToShortDateString()</a>
+    </td>
+    <td class="v-align-middle">
+        <p>@Model.StockPrice</p>
+    </td>
+    <td class="v-align-middle">
+        <p>@Model.Earning</p>
+    </td>
+    <td class="v-align-middle">
+        <p>@Model.Waste</p>
+    </td>
+</tr>

@@ -1,0 +1,29 @@
+﻿
+@using Kendo.Mvc.UI
+@model IEnumerable<EugenieWeb.Data.Models.Download>
+
+@(Html.Kendo().Grid(Model)
+      .Name("Grid")
+      .HtmlAttributes(new { style = "height:700px" })
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Ip);
+        columns.Bound(c => c.Time);
+        columns.Bound(c => c.Target);
+      })
+      .ToolBar(toolbar => {
+            //Excel Export is not supported in server binding mode
+            toolbar.Pdf();
+      })
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+)
+
+@section kendoui{
+    @Styles.Render("~/Content/KendoUI/css")
+    @Scripts.Render("~/bundles/kendo")
+}
