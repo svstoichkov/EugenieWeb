@@ -1,0 +1,34 @@
+﻿@model EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.Product
+
+@Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="form-group form-group-default required ">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group form-group-default required">
+            @Html.LabelFor(m => m.BuyingPrice)
+            @Html.TextBoxFor(m => m.BuyingPrice, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BuyingPrice, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group form-group-default required">
+            @Html.LabelFor(m => m.SellingPrice)
+            @Html.PasswordFor(m => m.SellingPrice, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SellingPrice, "", new { @class = "error" })
+        </div>
+    </div>
+</div>
+<div class="form-group form-group-default required">
+    @Html.LabelFor(m => m.Measure)
+    @Html.TextBoxFor(m => m.Measure, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Measure, "", new { @class = "error" })
+</div>
+<div class="form-group form-group-default required">
+    @Html.LabelFor(m => m.Quantity)
+    @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "error" })
+</div>

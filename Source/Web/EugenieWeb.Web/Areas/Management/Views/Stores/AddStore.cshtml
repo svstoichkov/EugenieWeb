@@ -13,7 +13,6 @@
         @using (Html.BeginForm("AddStore", "Stores", FormMethod.Post, new { @class = "p-t-15", role = "form" }))
         {
             @Html.AntiForgeryToken()
-            @Html.ValidationSummary("", new { @class = "text-danger" })
 
             @Html.EditorFor(m => m)
             <button class="btn btn-primary btn-cons m-t-10" type="submit">Добави</button>

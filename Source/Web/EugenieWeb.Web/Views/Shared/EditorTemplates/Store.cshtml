@@ -1,5 +1,6 @@
 ﻿@model EugenieWeb.Data.Models.Store
     
+@Html.ValidationSummary("", new { @class = "text-danger" })
 <div class="form-group form-group-default required ">
     @Html.LabelFor(m => m.Name)
     @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
