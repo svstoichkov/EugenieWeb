@@ -1,18 +1,24 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using EugenieWeb.Common
 @if (Request.IsAuthenticated)
 {
     <li class="nav-item">
         @Html.ActionLink("Контролен панел", "Index", "Management/Products")
     </li>
+    if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+    {
         <li class="nav-item">
-            <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-item">Изход</a>
+            @Html.ActionLink("Администрация", "Index", "Administration/Users")
         </li>
-            <li class="nav-item">
-                @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm", @class = "nav-item" }))
+    }
+    <li class="nav-item">
+        <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-item">Изход</a>
+    </li>
+        <li class="nav-item">
+            @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm", @class = "nav-item" }))
                 {
-                    @Html.AntiForgeryToken()
-                }
-            </li>
+                @Html.AntiForgeryToken()
+            }
+        </li>
 }
 else
 {

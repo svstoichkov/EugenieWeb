@@ -1,10 +1,7 @@
 ﻿namespace EugenieWeb.Web.Areas.Management.Controllers
 {
-    using System.Data.Entity;
     using System.Linq;
     using System.Web.Mvc;
-
-    using Data;
 
     using Helpers;
     using Helpers.WebApiModels;
@@ -16,6 +13,7 @@
 
     using Services.Data;
 
+    [Authorize]
     public class ProductsController : BaseManagementController
     {
         private readonly IStoresService storesService;
@@ -29,6 +27,11 @@
 
         public ActionResult Index()
         {
+            var stores = this.storesService.GetStoresByUserId(this.User.Identity.GetUserId());
+            if (!stores.Any())
+            {
+                return this.RedirectToAction("AddStore", "Stores");
+            }
             return View();
         }
 

@@ -2,7 +2,7 @@
 
 @(Html.Kendo().Grid<EugenieWeb.Web.Areas.Management.Helpers.WebApiModels.Product>()
       .Name("grid")
-      .HtmlAttributes(new { style = "height:700px", id = "gridWorkflows" })
+      .HtmlAttributes(new { style = "height:700px"})
       .Columns(columns =>
                {
                    columns.Bound(c => c.Name);
@@ -43,4 +43,3 @@
     @Styles.Render("~/Content/KendoUI/css")
     @Scripts.Render("~/bundles/kendo")
 }
-
