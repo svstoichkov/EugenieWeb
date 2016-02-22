@@ -1,0 +1,33 @@
+﻿@using Kendo.Mvc.UI
+
+@(Html.Kendo().Grid<EugenieWeb.Data.Models.Store>()
+      .Name("grid")
+      .HtmlAttributes(new { style = "height:700px" })
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Name);
+          columns.Bound(c => c.Username);
+          columns.Bound(c => c.Password);
+          columns.Bound(c => c.Url);
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Stores_Read", "Stores"))
+          .Update(update => update.Action("Stores_Update", "Stores"))
+          .Destroy(destroy => destroy.Action("Stores_Destroy", "Stores"))
+      )
+)
+
+@section kendoui{
+    @Styles.Render("~/Content/KendoUI/css")
+    @Scripts.Render("~/bundles/kendo")
+}

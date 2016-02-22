@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\StoresController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Management\Controllers\BaseManagementController.cs" />
     <Compile Include="Areas\Management\Controllers\ProductsController.cs" />
@@ -299,6 +300,7 @@
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="Areas\Management\Views\Shared\SidebarMenuPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\SidebarMenuPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Stores\Index.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -352,13 +354,17 @@
     <Content Include="Views\Account\_Layout.cshtml" />
     <Content Include="Areas\Management\Views\Stores\ListStores.cshtml" />
     <Content Include="Areas\Management\Views\Stores\AddStore.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AddStoreViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Store.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
+    <Folder Include="Views\Grid\" />
     <Folder Include="Views\Products\" />
+    <Folder Include="Views\Stores\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
