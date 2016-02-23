@@ -3,9 +3,11 @@
     using System.Linq;
     using System.Web.Mvc;
 
-    using Services.Data;
+    using Common;
+
     using Services.Data.Contracts;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class DownloadsController : Controller
     {
         private readonly IDownloadsService downloadsService;

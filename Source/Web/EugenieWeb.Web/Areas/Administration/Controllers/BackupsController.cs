@@ -3,13 +3,15 @@
     using System.IO;
     using System.Web.Mvc;
 
+    using Common;
+
     using Data.Models;
 
     using Kendo.Mvc.Extensions;
 
-    using Services.Data;
     using Services.Data.Contracts;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class BackupsController : Controller
     {
         private readonly IBackupsService backupsService;

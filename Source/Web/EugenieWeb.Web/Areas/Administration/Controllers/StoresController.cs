@@ -2,14 +2,16 @@
 {
     using System.Web.Mvc;
 
+    using Common;
+
     using Data.Models;
 
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
 
-    using Services.Data;
     using Services.Data.Contracts;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class StoresController : Controller
     {
         private readonly IStoresService storesService;
@@ -26,7 +28,8 @@
 
         public ActionResult Stores_Read([DataSourceRequest]DataSourceRequest request)
         {
-            var result = this.storesService.GetStores().ToDataSourceResult(request, store => new {
+            var result = this.storesService.GetStores().ToDataSourceResult(request, store => new
+            {
                 Id = store.Id,
                 Name = store.Name,
                 Username = store.Username,

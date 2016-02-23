@@ -9,7 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
-    using EugenieWeb.Web.ViewModels.Manage;
+    using ViewModels.Manage;
 
     [Authorize]
     public class ManageController : BaseController

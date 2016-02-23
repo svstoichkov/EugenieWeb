@@ -18,7 +18,7 @@
         public override bool Equals(object obj)
         {
             var missingProduct = obj as MissingProduct;
-            return missingProduct != null && this.Barcode.Equals(((MissingProduct) obj).Barcode);
+            return missingProduct != null && this.Barcode.Equals(((MissingProduct)obj).Barcode);
         }
     }
 }

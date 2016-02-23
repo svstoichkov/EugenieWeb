@@ -3,9 +3,8 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using Data;
     using Data.Models;
-
-    using Eugenie.Data;
 
     using Infrastructure.Mapping;
 

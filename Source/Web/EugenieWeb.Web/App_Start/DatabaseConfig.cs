@@ -1,8 +1,9 @@
-﻿namespace Eugenie.Server.Api
+﻿namespace EugenieWeb.Web
 {
     using System.Data.Entity;
 
-    using EugenieWeb.Data;
+    using Data;
+
     using EugenieWeb.Data.Migrations;
 
     public static class DatabaseConfig

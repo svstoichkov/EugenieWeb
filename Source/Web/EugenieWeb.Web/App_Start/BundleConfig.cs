@@ -37,8 +37,7 @@
                 "~/Content/pace-theme-flash.css"));
             bundles.Add(new StyleBundle("~/Content/KendoUI/css").Include(
                 "~/Content/KendoUI/kendo.common-material.min.css",
-                "~/Content/KendoUI/kendo.material.min.css"
-                ));
+                "~/Content/KendoUI/kendo.material.min.css"));
             bundles.Add(new StyleBundle("~/Content/Landing/css").Include("~/Content/Landing/material-design-iconic-font.min.css", "~/Content/Landing/bootstrap.css", "~/Content/Landing/main.css"));
         }
     }

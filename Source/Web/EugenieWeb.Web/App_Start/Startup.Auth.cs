@@ -2,13 +2,13 @@
 {
     using System;
 
+    using Data;
+    using Data.Models;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
-
-    using EugenieWeb.Data;
-    using EugenieWeb.Data.Models;
 
     using Owin;
 

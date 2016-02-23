@@ -2,8 +2,6 @@
 {
     using System.Data.Entity;
 
-    using Eugenie.Data;
-
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using Models;
@@ -15,11 +13,6 @@
         {
         }
 
-        public static EugenieWebDbContext Create()
-        {
-            return new EugenieWebDbContext();
-        }
-
         public IDbSet<Store> Stores { get; set; }
 
         public IDbSet<Backup> Backups { get; set; }
@@ -27,5 +20,10 @@
         public IDbSet<Download> Downloads { get; set; }
 
         public IDbSet<Message> Messages { get; set; }
+
+        public static EugenieWebDbContext Create()
+        {
+            return new EugenieWebDbContext();
+        }
     }
 }

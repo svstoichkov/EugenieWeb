@@ -12,11 +12,7 @@
 
     using Data;
 
-    using Eugenie.Data;
-
-    using Services.Data;
     using Services.Data.Contracts;
-    using Services.Web;
 
     public static class AutofacConfig
     {
@@ -52,7 +48,6 @@
         {
             builder.Register(x => new EugenieWebDbContext()).As<IEugenieWebDbContext>().InstancePerRequest();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerRequest();
-            builder.Register(x => new HttpCacheService()).As<ICacheService>().InstancePerRequest();
             builder.Register(x => new WebApiClient()).As<IWebApiClient>().InstancePerRequest();
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IStoresService));

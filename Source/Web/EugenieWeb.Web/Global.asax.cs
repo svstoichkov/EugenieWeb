@@ -6,8 +6,6 @@
     using System.Web.Optimization;
     using System.Web.Routing;
 
-    using Eugenie.Server.Api;
-
     using Infrastructure.Mapping;
 
 #pragma warning disable SA1649 // File name must match first type name

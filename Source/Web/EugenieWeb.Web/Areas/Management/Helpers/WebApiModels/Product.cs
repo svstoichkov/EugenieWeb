@@ -6,7 +6,7 @@
     {
         public Product()
         {
-            this.Measure = MeasureType.бр;
+            this.Measure = MeasureType.Бр;
         }
 
         public int Id { get; set; }

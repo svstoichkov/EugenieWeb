@@ -7,7 +7,15 @@
 
     public interface IEugenieWebDbContext
     {
-        DbSet<TEntity> Set<TEntity>() 
+        IDbSet<Store> Stores { get; set; }
+
+        IDbSet<Backup> Backups { get; set; }
+
+        IDbSet<Download> Downloads { get; set; }
+
+        IDbSet<Message> Messages { get; set; }
+
+        DbSet<TEntity> Set<TEntity>()
             where TEntity : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity)
@@ -16,13 +24,5 @@
         void Dispose();
 
         int SaveChanges();
-
-        IDbSet<Store> Stores { get; set; }
-
-        IDbSet<Backup> Backups { get; set; }
-
-        IDbSet<Download> Downloads { get; set; }
-
-        IDbSet<Message> Messages { get; set; }
     }
 }

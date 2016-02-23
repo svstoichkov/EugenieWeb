@@ -4,9 +4,8 @@
 
     using Common;
 
+    using Data;
     using Data.Models;
-
-    using Eugenie.Data;
 
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -28,7 +27,8 @@
 
         public ActionResult Users_Read([DataSourceRequest]DataSourceRequest request)
         {
-            var result = this.usersRepository.All().ToDataSourceResult(request, user => new {
+            var result = this.usersRepository.All().ToDataSourceResult(request, user => new
+            {
                 Id = user.Id,
                 Email = user.Email,
                 EmailConfirmed = user.EmailConfirmed,

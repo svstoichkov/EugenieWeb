@@ -42,7 +42,7 @@
                 this.Session["products"] = products;
             }
 
-            return View();
+            return this.View();
         }
 
         public ActionResult Products_Read([DataSourceRequest]DataSourceRequest request)
@@ -58,7 +58,6 @@
             });
 
             return this.Json(result);
-
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
@@ -106,7 +105,7 @@
                 this.apiClient.AddOrUpdate(client, model);
             }
 
-            return Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
+            return this.Json(new[] { product }.ToDataSourceResult(request, this.ModelState));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]

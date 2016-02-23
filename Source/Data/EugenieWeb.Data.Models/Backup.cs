@@ -1,6 +1,7 @@
 ﻿namespace EugenieWeb.Data.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     public class Backup
     {
@@ -13,6 +14,8 @@
 
         public DateTime CreatedOn { get; set; }
 
+        [Required]
+        [MaxLength(200)]
         public string FileName { get; set; }
 
         public double FileSize { get; set; }

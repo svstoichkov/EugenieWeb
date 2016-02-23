@@ -3,11 +3,12 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    using Common;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using EugenieWeb.Common;
-    using EugenieWeb.Data.Models;
+    using Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<EugenieWebDbContext>
     {
