@@ -250,6 +250,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Home\AddMessageViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -381,7 +382,6 @@
     <Folder Include="App_Data\Installs\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
-    <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Backups\" />
     <Folder Include="Views\Downloads\" />
     <Folder Include="Views\Products\" />

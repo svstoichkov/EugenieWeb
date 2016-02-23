@@ -2,6 +2,7 @@
     Layout = null;
     ViewBag.Title = "Начало";
 }
+@model EugenieWeb.Web.ViewModels.Home.AddMessageViewModel
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -173,26 +174,31 @@
                             </div>
                             <div class="col-md-5 col-md-offset-2">
                                 <h3 class="section-heading-underline">Свържете се с нас</h3>
-                                <form novalidate class="form-horizontal wow fadeInRight">
+                                @using (Html.BeginForm("Message", "Home", FormMethod.Post, new { @class = "form-horizontal wow fadeInRight", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+
                                     <fieldset>
                                         <div class="form-group">
                                             <div class="ui-input-group">
-                                                <input type="text" required class="form-control"><span class="input-bar"></span>
-                                                <label>Email</label>
+                                                @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control" })
+                                                @Html.LabelFor(m => m.Email)
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="ui-input-group">
-                                                <textarea type="text" required rows="5" class="form-control"></textarea><span class="input-bar"></span>
-                                                <label>Message </label>
+                                                @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = 5 })
+                                                @Html.LabelFor(m => m.Content)
+                                                @Html.ValidationMessageFor(m => m.Content, "", new { @class = "error" })
                                             </div>
                                         </div>
                                         <div class="divider"></div>
                                         <div class="form-group">
-                                            <button class="btn btn-raised btn-primary btn-w-sm ui-wave">SUBMIT</button>
+                                            <button class="btn btn-raised btn-primary btn-w-sm ui-wave">ИЗПРАТИ</button>
                                         </div>
                                     </fieldset>
-                                </form>
+                                }
                             </div>
                         </div>
                     </div>
@@ -206,5 +212,6 @@
     @Scripts.Render("~/bundles/landing/main")
     @Scripts.Render("~/bundles/landing/vendor")
     @Scripts.Render("~/bundles/landing/loader")
+    @Scripts.Render("~/bundles/jqueryval");
 </body>
 </html>

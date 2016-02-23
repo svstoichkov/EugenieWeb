@@ -47,7 +47,9 @@
     <Compile Include="DownloadsService.cs" />
     <Compile Include="IBackupsService.cs" />
     <Compile Include="IDownloadsService.cs" />
+    <Compile Include="IMessageService.cs" />
     <Compile Include="IStoresService.cs" />
+    <Compile Include="MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoresService.cs" />
   </ItemGroup>

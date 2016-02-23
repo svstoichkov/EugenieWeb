@@ -25,5 +25,7 @@
         public IDbSet<Backup> Backups { get; set; }
 
         public IDbSet<Download> Downloads { get; set; }
+
+        public IDbSet<Message> Messages { get; set; }
     }
 }
