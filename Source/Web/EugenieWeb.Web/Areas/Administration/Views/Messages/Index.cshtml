@@ -1,0 +1,31 @@
+﻿
+@using Kendo.Mvc.UI
+@model IEnumerable<EugenieWeb.Data.Models.Message>
+
+@(Html.Kendo().Grid(Model)
+      .Name("Grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Email);
+        columns.Bound(c => c.Content);
+        columns.Bound(c => c.CreatedOn);
+        columns.Command(command => {command.Destroy(); }).Width(180);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+        .Server()
+        .Model(model => model.Id(p => p.Id))
+        .Read(read => read.Action("Index", "Messages"))
+        .Destroy("Messages_Destroy", "Messages")
+      )
+)
+
+@section kendoui{
+    @Styles.Render("~/Content/KendoUI/css")
+    @Scripts.Render("~/bundles/kendo")
+}

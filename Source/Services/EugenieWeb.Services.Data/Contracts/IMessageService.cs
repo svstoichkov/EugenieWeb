@@ -1,4 +1,4 @@
-﻿namespace EugenieWeb.Services.Data
+﻿namespace EugenieWeb.Services.Data.Contracts
 {
     using System.Linq;
 
@@ -9,5 +9,7 @@
         void Add(string email, string content);
 
         IQueryable<Message> Get();
+
+        void Delete(int messageId);
     }
 }

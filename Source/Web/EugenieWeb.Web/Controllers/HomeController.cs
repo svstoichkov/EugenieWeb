@@ -3,6 +3,7 @@
     using System.Web.Mvc;
 
     using Services.Data;
+    using Services.Data.Contracts;
 
     using ViewModels.Home;
 

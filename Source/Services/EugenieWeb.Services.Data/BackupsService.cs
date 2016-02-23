@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Contracts;
+
     using Eugenie.Data;
 
     using EugenieWeb.Data.Models;
