@@ -1,7 +1,6 @@
 ﻿namespace EugenieWeb.Services.Data
 {
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
 
     using Eugenie.Data;
@@ -17,11 +16,12 @@
             this.backupsRepository = backupsRepository;
         }
 
-        public void Add(string fileName, int storeId)
+        public void Add(string fileName, int storeId, double fileSize)
         {
             var backup = new Backup();
             backup.StoreId = storeId;
             backup.FileName = fileName;
+            backup.FileSize = fileSize;
 
             this.backupsRepository.Add(backup);
             this.backupsRepository.SaveChanges();
@@ -35,6 +35,17 @@
         public string GetFileName(int backupId)
         {
             return this.backupsRepository.All().First(x => x.Id == backupId).FileName;
+        }
+
+        public IQueryable<Backup> GetAll()
+        {
+            return this.backupsRepository.All();
+        }
+
+        public void Delete(int backupId)
+        {
+            this.backupsRepository.Delete(backupId);
+            this.backupsRepository.SaveChanges();
         }
     }
 }

@@ -64,7 +64,7 @@
                     var fileName = Path.GetFileName(file.FileName);
                     var path = Path.Combine(this.Server.MapPath("~/App_Data/Backups"), fileName);
                     file.SaveAs(path);
-                    this.backupsService.Add(fileName, selectedStoreId);
+                    this.backupsService.Add(fileName, selectedStoreId, (double)file.ContentLength / (1024 * 1024));
                 }
             }
 

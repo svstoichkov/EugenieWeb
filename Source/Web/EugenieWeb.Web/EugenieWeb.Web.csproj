@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\BackupsController.cs" />
     <Compile Include="Areas\Administration\Controllers\DownloadsController.cs" />
     <Compile Include="Areas\Administration\Controllers\StoresController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
@@ -310,6 +311,7 @@
     <Content Include="Areas\Management\Views\Backups\Index.cshtml" />
     <Content Include="Areas\Management\Views\Backups\Upload.cshtml" />
     <Content Include="Areas\Administration\Views\Downloads\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Backups\Index.cshtml" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
     <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
@@ -380,6 +382,7 @@
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="ViewModels\Home\" />
+    <Folder Include="Views\Backups\" />
     <Folder Include="Views\Downloads\" />
     <Folder Include="Views\Products\" />
     <Folder Include="Views\Stores\" />

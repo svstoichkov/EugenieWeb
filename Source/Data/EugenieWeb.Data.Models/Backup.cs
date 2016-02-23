@@ -15,6 +15,8 @@
 
         public string FileName { get; set; }
 
+        public double FileSize { get; set; }
+
         public int StoreId { get; set; }
 
         public virtual Store Store { get; set; }
