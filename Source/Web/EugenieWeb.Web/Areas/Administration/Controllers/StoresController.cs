@@ -8,6 +8,7 @@
     using Kendo.Mvc.UI;
 
     using Services.Data;
+    using Services.Data.Contracts;
 
     public class StoresController : Controller
     {

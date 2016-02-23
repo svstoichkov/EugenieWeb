@@ -2,6 +2,8 @@
 {
     using System.Linq;
 
+    using Contracts;
+
     using Eugenie.Data;
 
     using EugenieWeb.Data.Models;
@@ -27,6 +29,12 @@
         public IQueryable<Message> Get()
         {
             return this.messagesRepository.All();
+        }
+
+        public void Delete(int messageId)
+        {
+            this.messagesRepository.Delete(messageId);
+            this.messagesRepository.SaveChanges();
         }
     }
 }

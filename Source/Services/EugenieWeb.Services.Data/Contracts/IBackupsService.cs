@@ -1,4 +1,4 @@
-﻿namespace EugenieWeb.Services.Data
+﻿namespace EugenieWeb.Services.Data.Contracts
 {
     using System.Collections.Generic;
     using System.Linq;
