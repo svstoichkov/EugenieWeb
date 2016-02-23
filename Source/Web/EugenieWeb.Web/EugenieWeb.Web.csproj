@@ -266,11 +266,16 @@
     <Compile Include="Areas\Management\ViewModels\Stores\StoreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Installs\eugenie-admin.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Installs\eugenie-seller.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\logo_white.png" />
     <Content Include="Content\jquery.scrollbar.css" />
     <Content Include="Content\KendoUI\kendo.common-material.min.css" />
     <Content Include="Content\KendoUI\kendo.default.min.css" />
@@ -315,13 +320,21 @@
     <Content Include="Areas\Administration\Views\Downloads\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Backups\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Messages\Index.cshtml" />
-    <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf" />
-    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2" />
-    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff" />
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="fonts\Landing\Material-Design-Iconic-Font.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="fonts\pages-icon\Pages-icon.eot" />
     <Content Include="fonts\pages-icon\Pages-icon.svg" />
     <None Include="fonts\pages-icon\Pages-icon.ttf" />
     <None Include="fonts\pages-icon\Pages-icon.woff" />
+    <None Include="Properties\PublishProfiles\eugenie - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eugenie - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -374,16 +387,16 @@
     <Content Include="Views\Shared\DisplayTemplates\StoreViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Deal.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BackupViewModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Display.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Shipment.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Report.cshtml" />
     <Content Include="Views\Errors\500.cshtml" />
     <Content Include="Views\Errors\404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />
-    <Folder Include="App_Data\Installs\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Management\Models\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Views\Backups\" />
     <Folder Include="Views\Downloads\" />
     <Folder Include="Views\Messages\" />

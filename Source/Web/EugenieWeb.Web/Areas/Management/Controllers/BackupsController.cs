@@ -63,6 +63,7 @@
                 if (file != null && file.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);
+                    Directory.CreateDirectory(this.Server.MapPath("~/App_Data/Backups"));
                     var path = Path.Combine(this.Server.MapPath("~/App_Data/Backups"), fileName);
                     file.SaveAs(path);
                     this.backupsService.Add(fileName, selectedStoreId, (double)file.ContentLength / (1024 * 1024));
